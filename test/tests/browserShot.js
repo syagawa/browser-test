@@ -44,6 +44,7 @@ module.exports = function () {
           var page = config.pages[pi];
           var viewport = config.viewports[vi];
           before(function(done){
+            this.timeout(10000);
             client
               .setViewportSize({
                 width: viewport.width,
@@ -53,7 +54,6 @@ module.exports = function () {
               .call(done);
           });
           it('is OK', function (done) {
-            this.timeout(10000);
             client
               .saveScreenshot(joinOutputPath(page.name + '_' + viewport.name))
               .call(done);
