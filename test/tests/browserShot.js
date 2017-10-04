@@ -2,7 +2,7 @@ const should = require('should');
 const webdriverio = require('webdriverio');
 const fs = require('fs');
 
-const config = require('../config.js');
+const config = require('../settings/config.js');
 
 let client;
 
