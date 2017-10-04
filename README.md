@@ -23,20 +23,20 @@ $ gulp test
 # Settings
 
 ```js
-// test/config.js
+// rename test/settings/config.sample.js to config.js
   // set Site URL
   config.url = 'localhost:8080/';
   // set screenshot save directory
   config.outdir = 'ss';
 
-// test/pages.js
+// rename test/settings/pages.sample.js to pages.js
   // set page name & page filepath
   {
     name: 'top',
     url: 'index.html'
   }
 
-// test/viewports.js
+// rename test/settings/viewports.sample.js to viewports.js
   // set viewport name & size
   {
     name: 'H1920_1080',
