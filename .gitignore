@@ -1,2 +1,5 @@
 node_modules
 ss
+test/settings/pages.js
+test/settings/viewports.js
+test/settings/config.js
