@@ -55,7 +55,7 @@ module.exports = function () {
           it('is OK', function (done) {
             this.timeout(10000);
             client
-              .saveScreenshot(joinOutputPath(page.name + viewport.name))
+              .saveScreenshot(joinOutputPath(page.name + '_' + viewport.name))
               .call(done);
           });
         });
