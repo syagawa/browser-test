@@ -6,15 +6,18 @@ const config = require('../config.js');
 
 let client;
 
+const fomatDate = require('../formatDate.js');
+
+var outdir = config.outdir + '/' + fomatDate(new Date(), 'YYYYMMDDhhmmss');
+
 function joinOutputPath(str) {
-  return `${config.outdir}/${str}.png`;
+  return `${outdir}/${str}.png`;
 }
 
 // Creates output dir for screenshot if NOT exists
-if (!fs.existsSync(config.outdir)) {
-  fs.mkdirSync(config.outdir);
+if (!fs.existsSync(outdir)) {
+  fs.mkdirSync(outdir);
 }
-
 
 
 module.exports = function () {
