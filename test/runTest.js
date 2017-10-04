@@ -1,5 +1,5 @@
-const test01 = require('./tests/sampleTest01');
+const testChrome = require('./tests/localTestChrome');
 
 describe('Sample Test', () => {
-  test01();
+  testChrome();
 });
