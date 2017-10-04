@@ -16,6 +16,7 @@ if (!fs.existsSync(config.outdir)) {
 }
 
 
+
 module.exports = function () {
   describe('Test Chrome', () => {
     before(function (done) {
@@ -34,19 +35,28 @@ module.exports = function () {
       client.end().call(done);
     });
 
-    for(var i in config.pages){
-      describe('Test Chrome', () => {
-        var page = config.pages[i];
-        before(function(done){
-          client.url(config.url + page.url).call(done);
+    for(var pi in config.pages){
+      for(var vi in config.viewports){
+        describe('Test Chrome', () => {
+          var page = config.pages[pi];
+          var viewport = config.viewports[vi];
+          before(function(done){
+            client
+              .setViewportSize({
+                width: viewport.width,
+                height: viewport.height
+              })
+              .url(config.url + page.url)
+              .call(done);
+          });
+          it('is OK', function (done) {
+            this.timeout(10000);
+            client
+              .saveScreenshot(joinOutputPath(page.name + viewport.name))
+              .call(done);
+          });
         });
-        it('is OK', function (done) {
-          this.timeout(10000);
-          client
-            .saveScreenshot(joinOutputPath(page.name))
-            .call(done);
-        });
-      });
+      }
     }
   });
 };
