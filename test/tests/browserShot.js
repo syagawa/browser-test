@@ -22,7 +22,7 @@ module.exports = function () {
     before(function (done) {
       this.timeout(30000);
       client = webdriverio
-        .remote({ desiredCapabilities: { browserName: 'chrome' } })
+        .remote({ desiredCapabilities: { browserName: config.browser } })
         .init().url(config.url).call(done);
       process.on('uncaughtException', (err) => {
         const date = new Date().toLocaleString().replace(/\s|\//g, '-').replace(/:/g, '');
@@ -37,7 +37,7 @@ module.exports = function () {
 
     for(var pi in config.pages){
       for(var vi in config.viewports){
-        describe('Test Chrome', () => {
+        describe('Browser Screen Shot', () => {
           var page = config.pages[pi];
           var viewport = config.viewports[vi];
           before(function(done){
