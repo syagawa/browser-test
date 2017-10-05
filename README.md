@@ -23,7 +23,7 @@ $ gulp test
 # Settings
 
 ```js
-// rename test/settings/target.sample.js to target.js and move to targets directory
+// rename test/settings/targets.target.sample1.js to target.js and move to targets directory.
   // set Site URL
   target.url = 'localhost:8080/';
 
@@ -43,9 +43,9 @@ $ gulp test
     height: 1080
   }
 
-// If you rewrite the following part of site.js, it loads its configuration file. By holding multiple files in the targets directory, you can test many sites simply by rewriting site.js.
-  // site.js
-  const target = require('./targets/<your js>');
+// If you rename test/settings/targets.target.sample2.js to target.js and move to targets directory. By holding multiple files in the targets directory, you can test many sites simply by rewriting target.js.
+  // test/settings/targets/target.js
+  const target = require('./<your js>');
 
 ```
 

@@ -1,5 +1,5 @@
 const config = {};
-const site = require('./site.js');
+const site = require('./targets/target.js');
 
 config.url = site.url;
 config.outdir = 'ss';
