@@ -1,10 +1,11 @@
 const config = {};
-config.url = 'localhost:9000/';
+const site = require('./site.js');
+
+config.url = site.url;
 config.outdir = 'ss';
 config.browser = 'chrome';//'firefox', 'chrome', 'opera', 'safari'
 
-const pages = require('./pages.js');
-config.pages = pages;
+config.pages = site.pages;
 
 const viewports = require('./viewports.js');
 config.viewports = viewports;
