@@ -45,6 +45,7 @@ module.exports = function () {
           var viewport = config.viewports[vi];
           before(function(done){
             this.timeout(10000);
+            config.login.logIn(client);
             client
               .setViewportSize({
                 width: viewport.width,
