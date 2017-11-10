@@ -56,6 +56,9 @@ module.exports = function () {
           });
           it('is OK', function (done) {
             client
+              .log('browser').then(function(msg){
+                console.log(msg.value);
+              })
               .saveScreenshot(joinOutputPath(page.name + '_' + viewport.name))
               .call(done);
           });
