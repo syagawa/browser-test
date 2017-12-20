@@ -30,6 +30,7 @@ module.exports = function () {
       process.on('uncaughtException', (err) => {
         const date = new Date().toLocaleString().replace(/\s|\//g, '-').replace(/:/g, '');
         console.log(`        ScrrenShot: error${date}.png`);
+        console.log(err);
         client.saveScreenshot(joinOutputPath(`error${date}`));
       });
     });
@@ -45,7 +46,9 @@ module.exports = function () {
           var viewport = config.viewports[vi];
           before(function(done){
             this.timeout(10000);
-            config.login.logIn(client);
+            if(config.login){
+              config.login.logIn(client);
+            }
             client
               .setViewportSize({
                 width: viewport.width,
