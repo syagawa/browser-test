@@ -90,3 +90,11 @@ grep optionで特定のテストのみを実行
 ```
 $ mocha t.js -g 002
 ```
+
+# test方法
+
+1. $ npm i
+2. $ npm i -g selenium-standalone
+3. test/settings/targets/target.sample.js を target.jsにリネーム
+4. test/settings/targets/sample-target.js を 書き換え
+5. gulp test

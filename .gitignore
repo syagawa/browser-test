@@ -1,4 +1,6 @@
 node_modules
 ss
 test/settings/viewports.js
-test/settings/targets
+test/settings/targets/*
+!test/settings/targets/target.sample.js
+!test/settings/targets/sample-target.js
